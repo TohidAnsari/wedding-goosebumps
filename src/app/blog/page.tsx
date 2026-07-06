@@ -4,6 +4,8 @@ import Link from "next/link";
 import prisma from "@/lib/prisma";
 import Navigation from "@/components/sections/navigation";
 
+export const dynamic = "force-dynamic";
+
 export default async function BlogListingPage() {
   const posts = await prisma.blogPost.findMany({
     where: { status: "Published" },
